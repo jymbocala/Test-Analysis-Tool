@@ -1,5 +1,12 @@
 header {
     display: flex;
-    justify-content: space-between;
-    padding: 10px 40px;
+    // border: red 1px solid;
+    justify-content: center;
+    padding-top: 7.5rem;
+    padding-bottom: 4rem;
+
+    .title{
+        font-size: 2.125rem;
+        color: #fff;
+    }
 }

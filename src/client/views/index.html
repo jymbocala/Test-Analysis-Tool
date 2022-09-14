@@ -1,54 +1,69 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Test</title>
-        <script type="text/javascript" src="/js/nameChecker.js"></script>
-        <script type="text/javascript" src="/js/formHandler.js"></script>
-        <script type="text/javascript" src="../../../dist/main.js"></script>
-        <link rel="stylesheet" href="/styles/resets.css">
-        <link rel="stylesheet" href="/styles/base.css">
-        <link rel="stylesheet" href="/styles/header.css">
-        <link rel="stylesheet" href="/styles/form.css">
-        <link rel="stylesheet" href="/styles/footer.css">
-    </head>
+  <head>
+    <meta charset="utf-8" />
+    <title>Test</title>
+    <script type="text/javascript" src="/js/nameChecker.js"></script>
+    <script type="text/javascript" src="/js/formHandler.js"></script>
+    <script type="text/javascript" src="../../../dist/main.js"></script>
+    <link rel="stylesheet" href="/styles/resets.css" />
+    <link rel="stylesheet" href="/styles/base.css" />
+    <link rel="stylesheet" href="/styles/header.css" />
+    <link rel="stylesheet" href="/styles/form.css" />
+    <link rel="stylesheet" href="/styles/footer.css" />
+  </head>
 
-    <body>
+  <body>
+    <header>
+      <h1 class="title">News Sentiment Analysis Tool 📰</h1>
+    </header>
 
-        <header>
-            <div class="">
-                Logo
-            </div>
-            <div class="">
-                navigation
-            </div>
-        </header>
+    <main>
+      <section>
+        <div class="description">
+            <p>
+            Hi! 👋 This is a simple web tool that allows you to run Natural Language
+            Processing (NLP) on articles or blogs found on other websites. NLP
+            is the ability of an application to understand the human language,
+            written or oral.
+            </p>
+        </br>
+            <p>
+            This tool will classify the information available in the article,
+            like whether the content is subjective (opinion) or objective
+            (fact-based) and whether it is positive, neutral, or negative in
+            tone.
+            </p>
+        </br>
+            <p>
+            Simply paste the URL of the article you want to analyze below and click the 'Analyze' button.
+            </p>
+        </div>
+        <form class="" onsubmit="return Client.handleSubmit(event)">
+          <!-- <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name"> -->
+          <input id="article-url" type="text" value="" onblur="onBlur()" placeholder="URL"/>
+          <button type="submit" name="" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">Analyze</button>
+        </form>
+      </section>
 
-        <main>
-            <section>
-                <form class="" onsubmit="return Client.handleSubmit(event)">
-                    <input id="name" type="text" name="input" value="" onblur="onBlur()" placeholder="Name">
-                    <input type="submit" name="" value="submit" onclick="return Client.handleSubmit(event)" onsubmit="return handleSubmit(event)">
-                </form>
-            </section>
+      <section>
+        <strong class="description">Results:</strong>
+        <div id="results-text"></div>
+      </section>
 
-            <section>
-                <strong>Form Results:</strong>
-                <div id="results"></div>
-            </section>
-        </main>
+    </main>
 
-        <footer>
-            <p>This is a footer</p>
-        </footer>
-        <script>
-            // Check that service workers are supported
-            if ('serviceWorker' in navigator) {
-                // Use the window load event to keep the page load performant
-                window.addEventListener('load', () => {
-                    navigator.serviceWorker.register('/service-worker.js');
-                });
-            }
-           </script>
-    </body>
+    <footer>
+      <a href="https://github.com/jymbocala">Jym Bocala</a>
+    </footer>
+    <script>
+      // Check that service workers are supported
+      if ("serviceWorker" in navigator) {
+        // Use the window load event to keep the page load performant
+        window.addEventListener("load", () => {
+          navigator.serviceWorker.register("/service-worker.js");
+        });
+      }
+    </script>
+  </body>
 </html>
